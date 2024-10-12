@@ -8,32 +8,40 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate('/chooseuser')
+  }
+
   return (
-    <div>
+    <div className='home'>
       <nav>
-        <img src="" alt="logo" />
-        <div>
-          <NavLink>About Us</NavLink>
-          <NavLink>Products</NavLink>
-          <NavLink>Contact Us</NavLink>
+        <img src={assets.schoolLogo} alt="logo" />
+        <div className='navLink' >
+          <NavLink className="navStyle">About us</NavLink>
+          <NavLink className="navStyle">Products</NavLink>
+          <NavLink className="navStyle">Contact us</NavLink>
         </div>
 
-        <div>
-          <button>Login</button>
-          <button>Guest Mode</button>
+        <div className='button'>
+          <button onClick={handleClick}>Login</button>
+          <button onClick={handleClick}>Guest Mode</button>
         </div>
       </nav>
 
-      <div>
-        <div>
-          <h2>School Management System</h2>
-          <div>
+      <div className='content'>
+        <div className='schoolContent'>
+          <p className='heading'>School Management System</p>
+          <div className='loremIpsum'>
             {/* Use the LoremIpsum component to generate paragraphs */}
-            <LoremIpsum p={1} />
+            <p className="lorem" >
+             <LoremIpsum p={1} />
+            </p>
+
+            <div>Admin Register</div>
           </div>
         </div>
 
-        <img src={assets.teacherBg} alt="" />
+        <img src={assets.teacherBg} alt="background" />
       </div>
     </div>
   )

@@ -1,0 +1,25 @@
+.userContainer{
+    padding: 0 5%;
+    background: linear-gradient(45deg, rgb(194, 113, 182) 20%, rgb(236, 236, 213) 60%, rgb(132, 227, 132) 20%);
+    height: 100vh;
+}
+.chooseUser{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15rem;
+}
+.chooseUser h4{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.chooseUser button{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1.7rem;
+    cursor: pointer;
+    background: rgb(73, 205, 225);
+    border: none;
+    border-radius: 0.5rem;
+}

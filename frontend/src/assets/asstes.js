@@ -17,7 +17,7 @@ import man3 from './man3.jpeg'
 import man4 from './man4.jpeg'
 import man5 from './man5.jpeg'
 import man7 from './man7.jpeg'
-import teacherBg from './teacherBg.jpeg'
+import teacherBg from './teacherBg.png'
 import schoolLogo from './schoolLogo.png'
 
 

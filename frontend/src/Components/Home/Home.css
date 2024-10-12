@@ -1,0 +1,77 @@
+.home{
+    padding: 0 2rem;
+    background: linear-gradient(45deg, rgb(194, 113, 182) 20%, rgb(236, 236, 213) 60%, rgb(132, 227, 132) 20%);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+nav .navLink{
+    display: flex;
+    gap: 5rem;
+    font-size: 1.3rem;
+    align-items: center;
+}
+
+.navLink .navStyle{
+    color: black;
+    text-decoration: none;
+}
+
+nav img{
+    /* height: 2rem; */
+    width: 6rem;
+}
+
+nav .button{
+    display: flex;
+    gap: 1rem;
+}
+.button button{
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+.button button:nth-child(1){
+    background: rgb(171, 24, 216);
+    color: white;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.content .schoolContent{
+    text-align: center;
+}
+.schoolContent .heading{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(58, 57, 57);
+}
+
+.schoolContent .loremIpsum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 40%; */
+}
+.loremIpsum .lorem{
+    width: 70%;
+    font-size: 1.4rem;
+}
+/* .content img{
+    width: 80%;
+} */
