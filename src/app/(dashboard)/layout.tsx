@@ -25,9 +25,16 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex`}
       >
-        Dashboard {children}
+        {/* Dashboard {children} */}
+
+        {/* LEFT */}
+        <div>Left</div>
+
+
+        {/* RIGHT */}
+        <div>RIght</div>
       </body>
     </html>
   );
