@@ -1,7 +1,5 @@
 import { BookCheck, BookCopy, BookOpenCheck, CalendarDays, GraduationCap, House, LogOut, Mail, Mailbox, School, Settings, Shapes, UserCheck, UserPen, Users, Workflow } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { title } from 'process'
 import React from 'react'
 
 const menuItem = [
@@ -100,15 +98,15 @@ const Menubar = () => {
         {
             menuItem.map((item, index) => {
                 return (
-                    <div key={index} className='flex text-base flex-col items-start p-2 justify-center'>
+                    <div key={index} className='flex text-base flex-col gap-[3px] items-start p-2 justify-center'>
                         <span className=''>{item.title}</span>
                         {
                             item.items.map((i, index) => {
                                 return(
-                                    <Link href={i.url} key={index} className='w-full flex gap-4 p-2 hover:bg-gray-200 hover:border-t hover:border-gray-400 rounded-lg text-sm  '>
+                                    <Link href={i.url} key={index} className='w-full h-[40px] flex gap-5 p-2 hover:bg-gray-200 hover:border-b hover:border-gray-400 rounded-lg text-sm '>
                                         {/* <Image src={`${i.icon}`} alt={`${i.label}`} height={20} width={20}/> */}
-                                        <span className='h-3 w-3 text-gray-600'>{i.icon}</span>
-                                        <span className='mt-[1p] hidden lg:block'>{i.label}</span>
+                                        <span className='h-[8px] w-[8px] text-gray-600'>{i.icon}</span>
+                                        <span className='mt-[1px] hidden lg:block'>{i.label}</span>
                                     </Link>
                                 )
                             })
