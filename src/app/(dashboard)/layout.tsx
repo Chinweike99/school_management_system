@@ -29,7 +29,7 @@ export default function DashboardLayout({
 
     <div className="flex h-screen">
       {/* LEFT */}
-      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-red-400">
+      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] border-1 border-gray-500">
         <Link href={"/"} className="flex justify-center items-center">
         <span className="lg:hidden sm:block">SM</span>
         <span className="hidden lg:block">School Management</span>
