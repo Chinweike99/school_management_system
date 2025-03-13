@@ -16,7 +16,7 @@ const menuItem = [
             {
                 icon: <BookCopy />,
                 label: "Teachers",
-                url: "/teachers"
+                url: "/teacher"
             },
             {
                 icon: <GraduationCap />,
@@ -105,10 +105,10 @@ const Menubar = () => {
                         {
                             item.items.map((i, index) => {
                                 return(
-                                    <Link href={i.url} key={index} className='w-full flex gap-4 p-2 hover:bg-gray-200 hover:border-t hover:border-gray-400 rounded-lg text-sm items-start  '>
+                                    <Link href={i.url} key={index} className='w-full flex gap-4 p-2 hover:bg-gray-200 hover:border-t hover:border-gray-400 rounded-lg text-sm  '>
                                         {/* <Image src={`${i.icon}`} alt={`${i.label}`} height={20} width={20}/> */}
                                         <span className='h-3 w-3 text-gray-600'>{i.icon}</span>
-                                        <span>{i.label}</span>
+                                        <span className='mt-[1p] hidden lg:block'>{i.label}</span>
                                     </Link>
                                 )
                             })

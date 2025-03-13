@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Studentpage from "./students/page";
 import Link from "next/link";
 import Menubar from "../components/Menubar";
+import Navbar from "../components/Navbar";
 // import "../../../src/globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,7 @@ export default function DashboardLayout({
 
     <div className="flex h-screen">
       {/* LEFT */}
-      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] border-1 border-gray-500">
+      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] border-1 border-gray-400">
         <Link href={"/"} className="flex justify-center items-center">
         <span className="lg:hidden sm:block">SM</span>
         <span className="hidden lg:block">School Management</span>
@@ -37,21 +38,13 @@ export default function DashboardLayout({
         <Menubar />
         
       </div>
-      {/* <Studentpage /> */}
+
 
       {/* RIGHT */}
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-amber-500">RIght</div>
+      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#dee0e6] overflow-scroll">
+        <Navbar />
+        {children}
+      </div>
     </div>
-
-
-    // <html lang="en">
-    //   <body
-    //     className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex`}
-    //   >
-    //     {/* Dashboard {children} */}
-
-
-    //   </body>
-    // </html>
   );
 }
