@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Studentpage from "./students/page";
 // import "../../../src/globals.css";
 
 const geistSans = Geist({
@@ -31,7 +32,7 @@ export default function DashboardLayout({
 
         {/* LEFT */}
         <div>Left</div>
-
+        <Studentpage />
 
         {/* RIGHT */}
         <div>RIght</div>
