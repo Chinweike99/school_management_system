@@ -1,5 +1,6 @@
 import Attendance from '@/app/components/AttendanceChart'
 import Countcharts from '@/app/components/Countcharts'
+import FinanceChart from '@/app/components/FinanceChart'
 import UserCard from '@/app/components/UserCard'
 import React from 'react'
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts'
@@ -30,11 +31,13 @@ const Adminpage = () => {
           </div>
         </div>
 
-        <div></div>
+        <div className='w-full  h-[450px]'>
+        <FinanceChart />
+        </div>
       </div>
 
       <div className='w-full lg:w-1/3'>
-        RIGHT
+        
       </div>
 
     </div>
