@@ -103,8 +103,8 @@ const FinanceChart = () => {
           <YAxis />
           <Tooltip />
                     <Legend  align='center' verticalAlign='top' wrapperStyle={{paddingBottom: "30px"}}/>
-          <Line type="monotone" dataKey="income" stroke="#65b8e9" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="expense" stroke="#566470" />
+          <Line type="monotone" dataKey="income" stroke="#65b8e9" activeDot={{ r: 8 }} strokeWidth={"2"} />
+          <Line type="monotone" dataKey="expense" stroke="#566470" strokeWidth={"2"} />
         </LineChart>
       </ResponsiveContainer>
     </div>

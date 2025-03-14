@@ -18,7 +18,7 @@ const data = [
     {
         name: 'Girls',
         count: 54,
-        fill: '#83a6ed',
+        fill: '#65b8e9',
     },
 ];
 
