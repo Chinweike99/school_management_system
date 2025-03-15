@@ -1,5 +1,45 @@
 @import "tailwindcss";
 
+
+
+
+
+.react-calendar{
+  width: 100% !important;
+  border: none !important;
+  border-radius: 15px !important;
+  padding: 1rem !important;
+  font-family: "Outfit" !important;
+  font-size: 20px !important;
+}
+
+.react-calendar__tile--active{
+  background: #313638 !important;
+  color: #fff;
+  border-radius: 10px !important;
+  width: 4rem !important;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+.react-calendar__tile--now {
+  background: #65b8e9 !important;
+  border-radius: 10px !important;
+}
+
+
+
+
+
+
+
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

@@ -15,6 +15,7 @@
     "next": "15.2.1",
     "re-chart": "^1.0.0",
     "react": "^19.0.0",
+    "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
     "recharts": "^2.15.1",
     "tailwind-variants": "^1.0.0"
