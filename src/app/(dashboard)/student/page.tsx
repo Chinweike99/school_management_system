@@ -1,8 +1,23 @@
+import Announcement from '@/app/components/Announcement'
+import EventCalender from '@/app/components/EventCalender'
 import React from 'react'
 
 const Studentpage = () => {
   return (
-    <div className='text-red-500'>Student page</div>
+    <div className=' flex gap-4 flex-col xl:flex-row mt-5'>
+      {/* LEFT */}
+      <div className='w-full xl:w-2/3'>
+          <div className='h-full bg-white p-4 rounded-2xl'>
+            <h1 className='text-xl font-semibold'>Schedule JSS1</h1>
+          </div>
+      </div>
+
+    {/* RIGTH */}
+      <div className='w-full xl:w-1/2'>
+        <EventCalender />
+        <Announcement />
+      </div>
+    </div>
   )
 }
 
