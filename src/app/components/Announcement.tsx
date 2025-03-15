@@ -21,7 +21,7 @@ const announcent =[
     date: "14 March 2025"
   },
   {
-    id: 3,
+    id: 4,
     title: "PTA meeting",
     description: "All parents are adviced to attend",
     date: "11 Feb 2025"
@@ -40,7 +40,7 @@ const Announcement = () => {
         {
           announcent.map(info => {
             return(
-              <div className='flex flex-col gap-2 p-3 hover:scale-[1.02] duration-700 odd:bg-[#65b8e9] even:bg-[black] even:text-white rounded-2xl'>
+              <div key={info.id} className='flex flex-col gap-2 p-3 hover:scale-[1.02] duration-700 odd:bg-[#65b8e9] even:bg-[black] even:text-white rounded-2xl'>
                 <div className='flex justify-between items-center'>
                   <h1 className='font-semibold'>{info.title}</h1>
                   <span className='text-sm italic bg-white px-3 text-gray-700 rounded-full'>{info.date}</span>
