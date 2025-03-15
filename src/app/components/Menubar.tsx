@@ -107,7 +107,7 @@ const menuItem = [
         {
             icon: <BookCopy />,
             label: "Teachers",
-          href: "teacher",
+          href: "/teacher",
           visible: ["admin", "teacher"],
         },
         {
