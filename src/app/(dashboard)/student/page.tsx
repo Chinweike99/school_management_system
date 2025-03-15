@@ -1,4 +1,8 @@
+"use client";
+
+
 import Announcement from '@/app/components/Announcement'
+import BigCalendar from '@/app/components/BigCalendar'
 import EventCalender from '@/app/components/EventCalender'
 import React from 'react'
 
@@ -9,6 +13,7 @@ const Studentpage = () => {
       <div className='w-full xl:w-2/3'>
           <div className='h-full bg-white p-4 rounded-2xl'>
             <h1 className='text-xl font-semibold'>Schedule JSS1</h1>
+            <BigCalendar />
           </div>
       </div>
 
