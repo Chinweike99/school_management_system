@@ -1,3 +1,5 @@
+"use client";
+
 import { Calendar, momentLocalizer, View, Views } from 'react-big-calendar'
 import moment from 'moment'
 import { calendarEvents } from '@/lib/data'
@@ -25,7 +27,7 @@ const handleOnChangeView = (selectedView: View) =>{
       endAccessor="end"
       views={["month","work_week", "day"]}
       view={view}
-      style={{height: "98%"}}
+      style={{height: 800}}
       onView={handleOnChangeView}
       min={new Date(2025, 1, 0, 8, 0, 0)}
       max={new Date(2025, 1, 0, 17, 0, 0)}
