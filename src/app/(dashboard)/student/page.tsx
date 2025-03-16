@@ -11,8 +11,8 @@ const Studentpage = () => {
     <div className=' flex gap-4 flex-col xl:flex-row mt-5'>
       {/* LEFT */}
       <div className='w-full xl:w-2/3'>
-          <div className='h-full bg-white p-4 rounded-2xl'>
-            <h1 className='text-xl font-semibold'>Schedule JSS1</h1>
+      <div className='h-full bg-white p-4 rounded-2xl'>
+      <h1 className='text-xl font-semibold py-3'>Students {"{John}"}</h1>
             <BigCalendar />
           </div>
       </div>
