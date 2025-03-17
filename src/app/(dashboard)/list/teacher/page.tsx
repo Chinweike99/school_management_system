@@ -1,7 +1,46 @@
 import Pagination from "@/app/components/Pagination";
+import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
 import { Bell, Plus, Search } from "lucide-react";
 import React from "react";
+
+
+const columns = [
+  {
+    header: "Info",
+    accessor: "Info"
+  },
+  {
+    header: "Teacher ID",
+    accessor: "teacherId",
+    className: "hidden md:table-cell"
+  },
+  {
+    header: "Subjects",
+    accessor: "Subjects",
+    className: "hidden md:table-cell"
+  },
+  {
+    header: "Classes",
+    accessor: "classes",
+    className: "hidden md:table-cell"
+  },
+  {
+    header: "Phone",
+    accessor: "phone",
+    className: "hidden lg:table-cell"
+  },
+  {
+    header: "Address",
+    accessor: "address",
+    className: "hidden lg:table-cell"
+  },
+  {
+    header: "Actions",
+    accessor: "action",
+  },
+]
+
 
 const TeacherListPage = () => {
   return (
@@ -27,7 +66,7 @@ const TeacherListPage = () => {
           </div>
         </div>
 
-
+          <Table columns={columns}/>
          {/* Paginaiton */}
          <div>
             <Pagination />
