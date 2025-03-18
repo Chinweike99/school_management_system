@@ -63,7 +63,7 @@ const TeacherListPage = () => {
 
 
   const renderRow = (item: Teacher) => (
-    <tr key={item.id} className="flex mt-3 justify-between items-center text-left">
+    <tr key={item.id} className="flex items-center justify-between py-3 even:bg-[#cad1d0]">
       <td className="flex gap-2">
         <Image src={item.photo} alt="Teacher photo" width={40} height={40}
         className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
@@ -81,12 +81,12 @@ const TeacherListPage = () => {
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
-              <button className="w-7 h-7 flex items-center justify-center rounded-full  bg-[#b1d2df]">
+              <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
                 <View className="h-16 w-16"/>
               </button>
             </Link>
             {role === "admin" &&
-            <button className="w-7 h-7 flex items-center justify-center rounded-full  bg-[#e53232]">
+            <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
                 <Delete className="h-16 w-16"/>
               </button>
             }
