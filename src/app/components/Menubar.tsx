@@ -113,13 +113,13 @@ const menuItem = [
         {
             icon: <GraduationCap />,
             label: "Students",
-          href: "/student",
+          href: "/list/student",
           visible: ["admin", "teacher"],
         },
         {
             icon: <Users />,
             label: "Parents",
-          href: "/parent",
+          href: "/list/parent",
           visible: ["admin", "teacher"],
         },
         {

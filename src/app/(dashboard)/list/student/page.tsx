@@ -3,22 +3,22 @@
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
-import { role, teachersData } from "@/lib/data";
+import { role, studentsData, teachersData } from "@/lib/data";
 import { Bell, Delete, Plus, Search, View } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 
-type Teacher = {
+type Student = {
   id: number;
   name: string;
-  teacherId: string;
+  studentId: string;
   email?: string;
   photo: string;
-  phone: string;
-  subjects: string[];
-  classes: string[];
+  phone?: string;
+  grade: number;
+  class: string[];
   address: string;
 }
 
@@ -28,18 +28,13 @@ const columns = [
     accessor: "Info"
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Student ID",
+    accessor: "studentId",
     className: "hidden md:table-cell"
   },
   {
-    header: "Subjects",
-    accessor: "Subjects",
-    className: "hidden md:table-cell"
-  },
-  {
-    header: "Classes",
-    accessor: "classes",
+    header: "Grade",
+    accessor: "grade",
     className: "hidden md:table-cell"
   },
   {
@@ -59,10 +54,10 @@ const columns = [
 ]
 
 
-const TeacherListPage = () => {
+const StudentsListPage = () => {
 
 
-  const renderRow = (item: Teacher) => (
+  const renderRow = (item: Student) => (
     <tr key={item.id} className="flex items-center justify-between py-3 even:bg-[#cad1d0] hover:bg-[#c9e9d3] cursor-pointer ">
       <td className="flex gap-2">
         <Image src={item.photo} alt="Teacher photo" width={40} height={40}
@@ -70,12 +65,12 @@ const TeacherListPage = () => {
         />
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-400">{item?.email}</p>
+          <p className="text-xs text-gray-400">{item?.class}</p>
         </div>
       </td>
-        <td className="hidden md:table-cell ">{item.teacherId}</td>
-        <td className="hidden md:table-cell ">{item.subjects.join(",")}</td>
-        <td className="hidden md:table-cell ">{item.classes.join(",")}</td>
+        <td className="hidden md:table-cell ">{item.studentId}</td>
+        <td className="hidden md:table-cell ">{item.grade}</td>
+        {/* <td className="hidden md:table-cell ">{item.classes.join(",")}</td> */}
         <td className="hidden md:table-cell ">{item.phone}</td>
         <td className="hidden md:table-cell ">{item.address}</td>
         <td>
@@ -100,19 +95,20 @@ const TeacherListPage = () => {
     <div className="p-5 bg-white flex-1 rounded-2xl my-5">
       <div className="flex flex-col">
         <div className="flex gap-8 justify-between items-center">
-          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Teachers</h1>
+          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Students</h1>
           <div className="flex flex-1 max-w-[800px]  items-center justify-end gap-3">
               <div className=" w-full">
               <TableSearch />
               </div>            
               <Bell className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
-              {role === "admin" && 
+
+              {role === "admin" &&
               <Plus className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
-                }
+            }
           </div>
         </div>
 
-          <Table columns={columns} renderRow={renderRow} data={teachersData}/>
+          <Table columns={columns} renderRow={renderRow} data={studentsData}/>
 
          {/* Paginaiton */}
          <div>
@@ -123,4 +119,4 @@ const TeacherListPage = () => {
   );
 };
 
-export default TeacherListPage;
+export default StudentsListPage;
