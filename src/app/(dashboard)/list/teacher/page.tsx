@@ -1,9 +1,26 @@
+"us client";
+
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
-import { Bell, Plus, Search } from "lucide-react";
+import { role, teachersData } from "@/lib/data";
+import { Bell, Delete, Plus, Search, View } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
+
+type Teacher = {
+  id: number;
+  name: string;
+  teacherId: string;
+  email?: string;
+  photo: string;
+  phone: string;
+  subjects: string[];
+  classes: string[];
+  address: string;
+}
 
 const columns = [
   {
@@ -43,20 +60,48 @@ const columns = [
 
 
 const TeacherListPage = () => {
+
+
+  const renderRow = (item: Teacher) => (
+    <tr key={item.id} className="flex mt-3 justify-between items-center text-left">
+      <td className="flex gap-2">
+        <Image src={item.photo} alt="Teacher photo" width={40} height={40}
+        className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
+        />
+        <div className="flex flex-col">
+          <h3 className="font-semibold">{item.name}</h3>
+          <p className="text-xs text-gray-400">{item?.email}</p>
+        </div>
+      </td>
+        <td className="hidden md:table-cell ">{item.teacherId}</td>
+        <td className="hidden md:table-cell ">{item.subjects.join(",")}</td>
+        <td className="hidden md:table-cell ">{item.classes.join(",")}</td>
+        <td className="hidden md:table-cell ">{item.phone}</td>
+        <td className="hidden md:table-cell ">{item.address}</td>
+        <td>
+          <div className="flex items-center gap-2">
+            <Link href={`/list/teacher/${item.id}`}>
+              <button className="w-7 h-7 flex items-center justify-center rounded-full  bg-[#b1d2df]">
+                <View className="h-16 w-16"/>
+              </button>
+            </Link>
+            {role === "admin" &&
+            <button className="w-7 h-7 flex items-center justify-center rounded-full  bg-[#e53232]">
+                <Delete className="h-16 w-16"/>
+              </button>
+            }
+          </div>
+        </td>
+    </tr>
+  );
+
+
   return (
-    <div className="p-5 bg-white rounded-2xl h-full my-5">
+    <div className="p-5 bg-white flex-1 rounded-2xl my-5">
       <div className="flex flex-col">
         <div className="flex gap-8 justify-between items-center">
           <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Teachers</h1>
           <div className="flex flex-1 max-w-[800px]  items-center justify-end gap-3">
-            {/* <div className="border flex-1  border-gray-400 p-2 rounded-full flex items-center justify-center gap-2">
-              <Search className="h-5 text-gray-500" />
-              <input
-                type="search"
-                placeholder="Search a teacher"
-                className="outline-none w-full"
-              />
-            </div> */}
               <div className=" w-full">
               <TableSearch />
               </div>            
@@ -66,7 +111,8 @@ const TeacherListPage = () => {
           </div>
         </div>
 
-          <Table columns={columns}/>
+          <Table columns={columns} renderRow={renderRow} data={teachersData}/>
+
          {/* Paginaiton */}
          <div>
             <Pagination />
