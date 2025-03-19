@@ -62,9 +62,6 @@ const SubjectListPage = () => {
       
         <td className="hidden md:table-cell ">{item.teachers.join(",")}</td>
         <td className="hidden md:table-cell ">{item.name}</td>
-        {/* <td className="hidden md:table-cell ">{item.classes.join(",")}</td>
-        <td className="hidden md:table-cell ">{item.phone}</td>
-        <td className="hidden md:table-cell ">{item.address}</td> */}
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
