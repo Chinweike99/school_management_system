@@ -4,7 +4,7 @@ import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
 import { classesData, role, teachersData } from "@/lib/data";
-import { Bell, Delete, Plus, Search, View } from "lucide-react";
+import { Bell, Delete, Edit, Plus, Search, View } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -48,10 +48,10 @@ const columns = [
   //   accessor: "address",
   //   className: "hidden lg:table-cell"
   // },
-  // {
-  //   header: "Actions",
-  //   accessor: "action",
-  // },
+  {
+    header: "Actions",
+    accessor: "action",
+  },
 ]
 
 
@@ -70,7 +70,7 @@ const ClassListPage = () => {
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
               <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
-                <View className="h-16 w-16"/>
+                <Edit className="h-16 w-16"/>
               </button>
             </Link>
             {role === "admin" &&

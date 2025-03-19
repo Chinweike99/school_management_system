@@ -3,24 +3,24 @@
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
-import { lessonsData, role, teachersData } from "@/lib/data";
+import { announcementsData, role, teachersData } from "@/lib/data";
 import { Bell, Delete, Edit, Plus, Search, View } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 
-type Lessons = {
+type Announcement = {
   id: number;
-  subject: string;
-  teacher: string;
+  title: string;
   class: string;
+  date: string;
 }
 
 const columns = [
   {
-    header: "Subject",
-    accessor: "subject"
+    header: "Title",
+    accessor: "title"
   },
   {
     header: "Class",
@@ -28,8 +28,8 @@ const columns = [
     className: "hidden md:table-cell"
   },
   {
-    header: "Teacher",
-    accessor: "teacher",
+    header: "Date",
+    accessor: "date",
     className: "hidden md:table-cell"
   },
   // {
@@ -54,17 +54,14 @@ const columns = [
 ]
 
 
-const LessonsListPage = () => {
+const AnnouncementListPage = () => {
 
 
-  const renderRow = (item: Lessons) => (
+  const renderRow = (item: Announcement) => (
     <tr key={item.id} className="flex items-center justify-between py-3 even:bg-[#cad1d0] hover:bg-[#c9e9d3] cursor-pointer ">
-      
-        <td className="hidden md:table-cell ">{item.subject}</td>
-        <td className="hidden md:table-cell ">{item.teacher}</td>
+        <td className="hidden md:table-cell ">{item.title}</td>
         <td className="hidden md:table-cell ">{item.class}</td>
-        {/* <td className="hidden md:table-cell ">{item.phone}</td>
-        <td className="hidden md:table-cell ">{item.address}</td> */}
+        <td className="hidden md:table-cell ">{item.date}</td>
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
@@ -87,7 +84,7 @@ const LessonsListPage = () => {
     <div className="p-5 bg-white flex-1 rounded-2xl my-5">
       <div className="flex flex-col">
         <div className="flex gap-8 justify-between items-center">
-          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Lessons</h1>
+          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">Announcents</h1>
           <div className="flex flex-1 max-w-[800px]  items-center justify-end gap-3">
               <div className=" w-full">
               <TableSearch />
@@ -99,7 +96,7 @@ const LessonsListPage = () => {
           </div>
         </div>
 
-          <Table columns={columns} renderRow={renderRow} data={lessonsData}/>
+          <Table columns={columns} renderRow={renderRow} data={announcementsData}/>
 
          {/* Paginaiton */}
          <div>
@@ -110,4 +107,4 @@ const LessonsListPage = () => {
   );
 };
 
-export default LessonsListPage;
+export default AnnouncementListPage;

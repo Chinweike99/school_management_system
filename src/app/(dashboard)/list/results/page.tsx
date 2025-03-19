@@ -3,18 +3,22 @@
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
-import { lessonsData, role, teachersData } from "@/lib/data";
-import { Bell, Delete, Edit, Plus, Search, View } from "lucide-react";
+import { resultsData, role, teachersData } from "@/lib/data";
+import { Bell, Delete, Plus, Search, View } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 
-type Lessons = {
+type Results = {
   id: number;
   subject: string;
-  teacher: string;
   class: string;
+  teacher: string;
+  student: string;
+  date: string;
+  type: string;
+  score: number;
 }
 
 const columns = [
@@ -32,44 +36,50 @@ const columns = [
     accessor: "teacher",
     className: "hidden md:table-cell"
   },
-  // {
-  //   header: "Classes",
-  //   accessor: "classes",
-  //   className: "hidden md:table-cell"
-  // },
-  // {
-  //   header: "Phone",
-  //   accessor: "phone",
-  //   className: "hidden lg:table-cell"
-  // },
-  // {
-  //   header: "Address",
-  //   accessor: "address",
-  //   className: "hidden lg:table-cell"
-  // },
   {
-    header: "Actions",
+    header: "Student",
+    accessor: "student",
+    className: "hidden md:table-cell"
+  },
+  {
+    header: "Date",
+    accessor: "date",
+    className: "hidden lg:table-cell"
+  },
+  {
+    header: "Type",
+    accessor: "type",
+    className: "hidden lg:table-cell"
+  },
+  {
+    header: "Score",
+    accessor: "score",
+  },
+  {
+    header: "Action",
     accessor: "action",
   },
 ]
 
 
-const LessonsListPage = () => {
+const ResultsListPage = () => {
 
 
-  const renderRow = (item: Lessons) => (
+  const renderRow = (item: Results) => (
     <tr key={item.id} className="flex items-center justify-between py-3 even:bg-[#cad1d0] hover:bg-[#c9e9d3] cursor-pointer ">
-      
+      {/* */}
         <td className="hidden md:table-cell ">{item.subject}</td>
-        <td className="hidden md:table-cell ">{item.teacher}</td>
         <td className="hidden md:table-cell ">{item.class}</td>
-        {/* <td className="hidden md:table-cell ">{item.phone}</td>
-        <td className="hidden md:table-cell ">{item.address}</td> */}
+        <td className="hidden md:table-cell ">{item.teacher}</td>
+        <td className="hidden md:table-cell ">{item.student}</td>
+        <td className="hidden md:table-cell ">{item.date}</td>
+        <td className="hidden md:table-cell ">{item.type}</td>
+        <td className="hidden md:table-cell ">{item.score}</td>
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
               <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
-                <Edit className="h-16 w-16"/>
+                <View className="h-16 w-16"/>
               </button>
             </Link>
             {role === "admin" &&
@@ -87,7 +97,7 @@ const LessonsListPage = () => {
     <div className="p-5 bg-white flex-1 rounded-2xl my-5">
       <div className="flex flex-col">
         <div className="flex gap-8 justify-between items-center">
-          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Lessons</h1>
+          <h1 className="p-1 h-8 rounded-full px-4 bg-[#afb7c1]">All Results</h1>
           <div className="flex flex-1 max-w-[800px]  items-center justify-end gap-3">
               <div className=" w-full">
               <TableSearch />
@@ -99,7 +109,7 @@ const LessonsListPage = () => {
           </div>
         </div>
 
-          <Table columns={columns} renderRow={renderRow} data={lessonsData}/>
+          <Table columns={columns} renderRow={renderRow} data={resultsData}/>
 
          {/* Paginaiton */}
          <div>
@@ -110,4 +120,4 @@ const LessonsListPage = () => {
   );
 };
 
-export default LessonsListPage;
+export default ResultsListPage;
