@@ -32,7 +32,7 @@ const Announcement = () => {
   return (
     <div>
       <div className='flex justify-between items-center bg-white p-2 rounded-xl'>
-        <h1 className='text-2xl font-semibold'>Announcent</h1>
+        <h1 className='text-xl font-semibold'>Announcent</h1>
         <MoreHorizontal />
       </div>
 

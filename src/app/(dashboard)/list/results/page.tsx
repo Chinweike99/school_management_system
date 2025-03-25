@@ -17,7 +17,7 @@ type Results = {
   teacher: string;
   student: string;
   date: string;
-  type: string;
+  type: "exam" | "assignment";
   score: number;
 }
 

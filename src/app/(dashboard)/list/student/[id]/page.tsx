@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Announcement from '@/app/components/Announcement'
 import Performance from '@/app/components/Performance'
 
-const SingleTeacherPage = () => {
+const SingleStudentPage = () => {
     return (
         <div className='flex-1 p-4 flex flex-col gap-4 xl:flex-row'>
             {/* LEFt */}
@@ -49,15 +49,15 @@ const SingleTeacherPage = () => {
                         <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[47%]'>
                             <PersonStandingIcon />
                             <div>
-                                <h1 className='text-xl font-semibold'>90%</h1>
-                                <span className='text-sm text-gray-400'>Attendance</span>
+                                <h1 className='text-xl font-semibold'>8</h1>
+                                <span className='text-sm text-gray-400'>Grade</span>
                             </div>
                         </div>
                         <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[47%]'>
                             <BrainCircuit />
                             <div>
-                                <h1 className='text-xl font-semibold'>2</h1>
-                                <span className='text-sm text-gray-400'>Branch</span>
+                                <h1 className='text-xl font-semibold'>15</h1>
+                                <span className='text-sm text-gray-400'>Subjects</span>
                             </div>
                         </div>
                         <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[47%]'>
@@ -70,7 +70,7 @@ const SingleTeacherPage = () => {
                         <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[47%]'>
                             <House />
                             <div>
-                                <h1 className='text-xl font-semibold'>6</h1>
+                                <h1 className='text-xl font-semibold'>6A</h1>
                                 <span className='text-sm text-gray-400'>Classes</span>
                             </div>
                         </div>
@@ -90,11 +90,11 @@ const SingleTeacherPage = () => {
                     <h1 className='text-xl font-semibold'>Shortcuts</h1>
                     <div className='mt-4 flex gap-4 flex-wrap text-xs text-gray-500'>
                         {/* <Link href={'/'} className='p-3 rounded-md bg-green-400 text-white'>Teacher&apos;s Classes</Link> */}
-                        <Link href={'/'} className='p-3 rounded-md bg-amber-400 text-white'>Teacher&apos;s Students</Link>
-                        <Link href={'/'} className='p-3 rounded-md bg-blue-400 text-white'>Teacher&apos;s Lessons</Link>
-                        <Link href={'/'} className='p-3 rounded-md bg-gray-400 text-white'>Teacher&apos;s Exams</Link>
-                        <Link href={'/'} className='p-3 rounded-md bg-red-400 text-white'>Teacher&apos;s Assignment</Link>
-                        <Link href={'/'} className='p-3 rounded-md bg-purple-400 text-white'>Teacher&apos;s Classes</Link>
+                        <Link href={'/'} className='p-3 rounded-md bg-amber-400 text-white'>Student&apos;s Teacher</Link>
+                        <Link href={'/'} className='p-3 rounded-md bg-blue-400 text-white'>Student&apos;s Assignment</Link>
+                        <Link href={'/'} className='p-3 rounded-md bg-gray-400 text-white'>Student&apos;s Exams</Link>
+                        <Link href={'/'} className='p-3 rounded-md bg-red-400 text-white'>Student&apos;s Assignment</Link>
+                        <Link href={'/'} className='p-3 rounded-md bg-purple-400 text-white'>Student&apos;s Classes</Link>
                     </div>
                 </div>
                 <Performance />
@@ -104,4 +104,4 @@ const SingleTeacherPage = () => {
     )
 }
 
-export default SingleTeacherPage
+export default SingleStudentPage;
