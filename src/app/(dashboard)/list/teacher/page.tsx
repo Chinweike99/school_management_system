@@ -87,10 +87,10 @@ const TeacherListPage = () => {
               </button>
             </Link>
             {role === "admin" && (
-            // <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
-            //     <Delete className="h-16 w-16"/>
-            //   </button>
-            <FormModal table="teacher" type="delete" id={item.id}/>
+                <>
+                  <FormModal table="teacher" type="update" id={item.id}/>
+                  <FormModal table="teacher" type="delete" id={item.id}/>
+                </>
           )}
           </div>
         </td>

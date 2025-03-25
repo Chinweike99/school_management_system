@@ -75,9 +75,6 @@ const ParentListPage = () => {
         <td className="hidden md:table-cell ">{item.address}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teacher/${item.id}`}>
-            
-            </Link>
             {role === "admin" && (
               <>
               <FormModal table="teacher" type="update" data={item}/>

@@ -64,11 +64,11 @@ const EventsListPage = () => {
         <td className="hidden md:table-cell ">{item.endTime}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teacher/${item.id}`}>
+            {/* <Link href={`/list/teacher/${item.id}`}>
               <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
                 <View className="h-16 w-16"/>
               </button>
-            </Link>
+            </Link> */}
             {role === "admin" &&
             (
               <>

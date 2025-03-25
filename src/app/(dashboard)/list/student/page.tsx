@@ -76,13 +76,7 @@ const StudentsListPage = () => {
         <td className="hidden md:table-cell ">{item.address}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teacher/${item.id}`}>
-              {/* <buttons */}
-            </Link>
             {role === "admin" && 
-            // <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
-            //     <Delete className="h-16 w-16"/>
-            //   </button> 
             (
               <>
                 <FormModal table="student" type="update" id={item.id}/>

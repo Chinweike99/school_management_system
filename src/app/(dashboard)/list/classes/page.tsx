@@ -58,11 +58,6 @@ const ClassListPage = () => {
         <td className="hidden md:table-cell ">{item.supervisor}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teacher/${item.id}`}>
-              <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
-                <Edit className="h-16 w-16"/>
-              </button>
-            </Link>
             {role === "admin" &&
             (
               <>
