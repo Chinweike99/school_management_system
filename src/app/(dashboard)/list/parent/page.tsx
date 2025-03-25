@@ -5,7 +5,7 @@ import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
 import { parentsData, role, teachersData } from "@/lib/data";
-import { Bell, Delete, Plus, Search, View } from "lucide-react";
+import { Bell, Delete, Filter, Plus, Search, View } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -102,6 +102,7 @@ const ParentListPage = () => {
               <TableSearch />
               </div>            
               <Bell className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
+              <Filter />
               {role === "admin" && 
               // <Plus className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
               <FormModal table="student" type="create"/>

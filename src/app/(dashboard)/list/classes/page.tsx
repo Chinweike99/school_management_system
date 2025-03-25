@@ -1,5 +1,6 @@
 "us client";
 
+import FormModal from "@/app/components/FormModal";
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
@@ -38,16 +39,6 @@ const columns = [
     accessor: "supervisor",
     className: "hidden md:table-cell"
   },
-  // {
-  //   header: "Phone",
-  //   accessor: "phone",
-  //   className: "hidden lg:table-cell"
-  // },
-  // {
-  //   header: "Address",
-  //   accessor: "address",
-  //   className: "hidden lg:table-cell"
-  // },
   {
     header: "Actions",
     accessor: "action",
@@ -65,7 +56,6 @@ const ClassListPage = () => {
         <td className="hidden md:table-cell ">{item.capacity}</td>
         <td className="hidden md:table-cell ">{item.grade}</td>
         <td className="hidden md:table-cell ">{item.supervisor}</td>
-        {/* <td className="hidden md:table-cell ">{item.address}</td> */}
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
@@ -74,9 +64,12 @@ const ClassListPage = () => {
               </button>
             </Link>
             {role === "admin" &&
-            <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
-                <Delete className="h-16 w-16"/>
-              </button>
+            (
+              <>
+              <FormModal table="class" type="update" />
+                <FormModal table="class" type="delete" />
+              </>
+            )
             }
           </div>
         </td>
@@ -95,7 +88,7 @@ const ClassListPage = () => {
               </div>            
               <Bell className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
               {role === "admin" && 
-              <Plus className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
+                <FormModal table="class" type="create" />
                 }
           </div>
         </div>

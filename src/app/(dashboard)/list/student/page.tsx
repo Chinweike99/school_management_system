@@ -77,15 +77,19 @@ const StudentsListPage = () => {
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teacher/${item.id}`}>
-              <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
-                <View className="h-16 w-16"/>
-              </button>
+              {/* <buttons */}
             </Link>
-            {role === "admin" &&
+            {role === "admin" && 
             // <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
             //     <Delete className="h-16 w-16"/>
-            //   </button>
-            <FormModal table="student" type="delete" id={item.id}/>
+            //   </button> 
+            (
+              <>
+                <FormModal table="student" type="update" id={item.id}/>
+                <FormModal table="student" type="delete" id={item.id}/>
+              </>
+            )
+            
             }
           </div>
         </td>

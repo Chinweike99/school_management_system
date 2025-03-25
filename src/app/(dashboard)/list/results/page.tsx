@@ -1,5 +1,6 @@
 "us client";
 
+import FormModal from "@/app/components/FormModal";
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import TableSearch from "@/app/components/TableSearch";
@@ -77,15 +78,12 @@ const ResultsListPage = () => {
         <td className="hidden md:table-cell ">{item.score}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link href={`/list/teacher/${item.id}`}>
-              <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#b1d2df]">
-                <View className="h-16 w-16"/>
-              </button>
-            </Link>
-            {role === "admin" &&
-            <button className="w-7 h-7 flex p-2 items-center justify-center rounded-full  bg-[#e53232]">
-                <Delete className="h-16 w-16"/>
-              </button>
+            {role === "admin" && (
+              <>
+              <FormModal table="result" type="update" />
+               <FormModal table="result" type="delete" />
+              </>
+            )
             }
           </div>
         </td>
@@ -104,7 +102,7 @@ const ResultsListPage = () => {
               </div>            
               <Bell className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
               {role === "admin" && 
-              <Plus className="h-7 w-7 text-gray-500 bg-[#3aaade] p-1 rounded-full" />
+              <FormModal table="lesson" type="create" />
                 }
           </div>
         </div>
