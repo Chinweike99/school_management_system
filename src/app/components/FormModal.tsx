@@ -2,6 +2,7 @@
 
 import { Delete, Eye, Pencil, Plus, X } from 'lucide-react';
 import React, { useState } from 'react'
+import TeacherForm from './form/TeacherForm';
 
 const FormModal = ({ table, type, data, id }: {
   table: "teacher" | "student" | "parent" | "subject" | "class" | "lesson" | "exam" | "assignment" | "result" | "attendance" | "event" | "announcement";
@@ -23,7 +24,8 @@ const FormModal = ({ table, type, data, id }: {
           <button className='bg-red-400 text-white p-2 rounded-md border-none w-[50%] min-w-[200px] self-center'>Delete</button>
       </form>
     ) :(
-      "Create or update"
+      // "Create or update"
+      <TeacherForm type='create' />
     )
   }
 
@@ -34,13 +36,13 @@ const FormModal = ({ table, type, data, id }: {
     </button>
     
     {
-      openModal && type === "update" ? (
+      openModal && type === "create" ? (
         <div className='w-screen h-screen absolute left-0 top-0 bg-opacity-50 bg-black/35 z-50 flex items-center justify-center'>
           <div className='relative bg-white p-4 rounded-md w-[90%] md:w-[70%] '>
             <Form />
             <button onClick={()=>setOpenModal(false)} className='absolute top-2 right-2 pb-3 cursor-pointer'><X/> </button>
            <div className='mt-3'>
-           Wecolme
+           {/* Wecolme */}
            </div>
           </div>
         </div>
