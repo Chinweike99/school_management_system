@@ -6,6 +6,7 @@ import BigCalendar from '@/app/components/BigCalendar'
 import Link from 'next/link'
 import Announcement from '@/app/components/Announcement'
 import Performance from '@/app/components/Performance'
+import FormModal from '@/app/components/FormModal'
 
 const SingleTeacherPage = () => {
     return (
@@ -19,6 +20,23 @@ const SingleTeacherPage = () => {
                         </div>
                         <div className='w-2/3 flex flex-col justify-between gap-4'>
                             <p className='font-semibold'>Name</p>
+                            <FormModal 
+                            table='teacher'
+                            type='create'
+                            data={[{
+                                id: 1,
+                                username: "Angelau",
+                                email: "yu@gmail.com",
+                                firstName: "Angela",
+                                lastName: "Uohane",
+                                phone: "+234 908877098 78",
+                                address: "no 10, azikiwe road, Lagos",
+                                bloodType: "As",
+                                dateOfBirth: "2000-03-09",
+                                sex: "male",
+                                imag: ""
+                            }]}
+                            />
                             <span className='text-sm text-[#30484e]'>description</span>
                             <div className='flex flex-wrap justify-between text-xs gap-2 text-[#30484e]'>
                                 <div className='flex flex-col gap-2'>

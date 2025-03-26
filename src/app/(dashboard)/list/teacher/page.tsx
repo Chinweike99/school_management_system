@@ -83,7 +83,9 @@ const TeacherListPage = () => {
           <div className="flex items-center gap-2">
             {role === "admin" && (
                 <>
+                <Link href={`/list/teacher/${item.id}`}>
                   <FormModal table="teacher" type="update" id={item.id}/>
+                  </Link>
                   <FormModal table="teacher" type="delete" id={item.id}/>
                 </>
           )}

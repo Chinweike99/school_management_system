@@ -1,8 +1,32 @@
 "use client";
 
-import { Delete, Eye, Pencil, Plus, X } from 'lucide-react';
+import { Delete, Eye, Plus, X } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react'
-import TeacherForm from './form/TeacherForm';
+// import TeacherForm from './form/TeacherForm';
+// import StudentForm from './form/studentForm';
+
+const TeacherForm = dynamic(() => import('./form/TeacherForm'), {
+  loading: () => 
+  <h1 className='bg-gray-300 bg-opacity-30 p-10'>
+    Loading...
+  </h1>
+})
+const StudentForm = dynamic(() => import('./form/studentForm'), {
+  loading: () => 
+  <h1 className='bg-gray-300 bg-opacity-30 p-10'>
+    Loading form...
+  </h1>
+})
+
+const forms: {
+  [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
+} = {
+  teacher: (type, data) => <TeacherForm type={type} data={data} />,
+  student: (type, data) => <StudentForm type={type} data={data} />,
+};
+
+
 
 const FormModal = ({ table, type, data, id }: {
   table: "teacher" | "student" | "parent" | "subject" | "class" | "lesson" | "exam" | "assignment" | "result" | "attendance" | "event" | "announcement";
@@ -23,10 +47,11 @@ const FormModal = ({ table, type, data, id }: {
           <span>All data would be lost. Are you sure you want to delete {table} ?</span>
           <button className='bg-red-400 text-white p-2 rounded-md border-none w-[50%] min-w-[200px] self-center'>Delete</button>
       </form>
-    ) :(
+    ) : type === "create" || type === "update" ?(
       // "Create or update"
-      <TeacherForm type='create' />
-    )
+      // <TeacherForm type='update' data={data}/>
+      forms[table]( type, data)
+    ) : "Form does not exist"
   }
 
   return (
@@ -46,7 +71,7 @@ const FormModal = ({ table, type, data, id }: {
            </div>
           </div>
         </div>
-      ) : openModal && type === "delete" ? (
+      ) :  openModal && type === "delete" && (
         <div className='w-screen h-screen absolute left-0 top-0 bg-opacity-50 bg-black/35 z-50 flex items-center justify-center'>
           <div className='relative bg-white p-4 rounded-md w-[90%] md:w-[70%] '>
             
@@ -54,7 +79,7 @@ const FormModal = ({ table, type, data, id }: {
             <Form />
           </div>
         </div>
-      ) : null
+      )
     }
     </>
   )

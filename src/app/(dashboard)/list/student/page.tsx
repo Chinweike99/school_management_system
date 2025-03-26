@@ -79,7 +79,9 @@ const StudentsListPage = () => {
             {role === "admin" && 
             (
               <>
+              <Link href={`/list/student/${item.id}`}>
                 <FormModal table="student" type="update" id={item.id}/>
+                </Link>
                 <FormModal table="student" type="delete" id={item.id}/>
               </>
             )
