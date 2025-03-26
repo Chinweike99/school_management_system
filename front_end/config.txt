@@ -1,0 +1,3 @@
+i worked on a group project, and before we would make a PR, we would have to ensure build and ESLint was ran locally and passed before making the PR. and it would have to pass  the build and Eslint check on github too. Why was this neccessary? Explain in details.
+
+Also, how can i replicate that on my project ?
